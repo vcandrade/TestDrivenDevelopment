@@ -70,17 +70,19 @@ public class LocacaoService {
 
             Filme filme = filmes.get(i);
 
-            if (i == 2) {
-
-                valorLocacao += filme.getPreco() * 0.75;
-
-            } else if (i == 3) {
-
-                valorLocacao += filme.getPreco() * 0.50;
+            switch (i) {
                 
-            } else {
-
-                valorLocacao += filme.getPreco();
+                case 2:
+                    valorLocacao += filme.getPreco() * 0.75;
+                    break;
+                
+                case 3:
+                    valorLocacao += filme.getPreco() * 0.50;
+                    break;
+                
+                default:
+                    valorLocacao += filme.getPreco();
+                    break;
             }
         }
 
